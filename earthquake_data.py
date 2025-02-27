@@ -20,14 +20,14 @@ class EarthquakeData:
         }
         return formatted_bbox_data
 
-    def all_month_data(self):
+    def past_month_data(self):
         url = self.urls["allMonth"]
         request_data = requests.get(url)
         json_data = request_data.json()
         bbox_data = self.get_bbox_data(url)
         return {"features":json_data["features"],"bbox":bbox_data}
 
-    def seven_day_data(self):
+    def past_week_data(self):
         url = self.urls["sevenDay"]
         request_data = requests.get(url)
         json_data = request_data.json()
